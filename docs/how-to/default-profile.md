@@ -1,6 +1,9 @@
 ---
 title: Configure profile
-description: Your profile defines which file-system and data-store your IPFS node will use, along with other configuration options. Learn how to set, change, and reset your profile.
+description: >-
+  Your profile defines which file-system and data-store your IPFS node will use,
+  along with other configuration options. Learn how to set, change, and reset
+  your profile.
 ---
 
 # Configure a default profile and switching between profiles
@@ -32,52 +35,34 @@ Here's a list of all the profiles available for your IPFS node. You can also fin
 
 ### Available only when initializing the node
 
-- `flatfs`
-  Configures the node to use the flatfs datastore.
+* `flatfs`   Configures the node to use the flatfs datastore.
 
-  This is the most battle-tested and reliable datastore, but it's significantly slower than the badger datastore.
+&#x20; This is the most battle-tested and reliable datastore, but it's significantly slower than the badger datastore.
 
-  Use this datastore if:
+&#x20; Use this datastore if:
 
-  - You need a very simple and very reliable datastore you and trust your filesystem. This datastore stores each block as a separate file in the underlying filesystem, so it's unlikely to lose data, unless there's an issue with the underlying file system.
-  - You need to run garbage collection on a small (<= 10GiB) datastore. The default datastore, badger, can leave several gigabytes of data behind when garbage collecting.
-  - You're concerned about memory usage. In its default configuration, badger can use up to several gigabytes of memory.
+&#x20; \- You need a very simple and very reliable datastore you and trust your filesystem. This datastore stores each block as a separate file in the underlying filesystem, so it's unlikely to lose data, unless there's an issue with the underlying file system.   - You need to run garbage collection on a small (<= 10GiB) datastore. The default datastore, badger, can leave several gigabytes of data behind when garbage collecting.   - You're concerned about memory usage. In its default configuration, badger can use up to several gigabytes of memory.
 
-- `badgerds`
-  Configures the node to use the badger datastore.
+* `badgerds`   Configures the node to use the badger datastore.
 
-  This is the fastest datastore. Use this datastore if performance, especially when adding many gigabytes of files, is critical.
+&#x20; This is the fastest datastore. Use this datastore if performance, especially when adding many gigabytes of files, is critical.
 
-  However, this datastore will not properly reclaim space when your datastore is smaller than several gigabytes. If you run IPFS with '--enable-gc' (you have enabled block-level garbage collection), you plan on storing very little data in
-  your IPFS node, and disk usage is more critical than performance, consider using
-  `flatfs`.
+&#x20; However, this datastore will not properly reclaim space when your datastore is smaller than several gigabytes. If you run IPFS with '--enable-gc' (you have enabled block-level garbage collection), you plan on storing very little data in   your IPFS node, and disk usage is more critical than performance, consider using   `flatfs`.
 
-  This datastore uses up to several gigabytes of memory.
+&#x20; This datastore uses up to several gigabytes of memory.
 
 ### Available at any time
 
-- `default-datastore`
-  Restores the default datastore (flatfs).
+* `default-datastore`   Restores the default datastore (flatfs).
 
-  Read the `flatfs` profile description for more information on this datastore.
+&#x20; Read the `flatfs` profile description for more information on this datastore.
 
-- `server`
-  Disables local host discovery, recommended when running IPFS on machines with public IPv4 addresses.
-
-- `local-discovery`
-  Sets default values to fields affected by the server profile, enables discovery in local networks.
-
-- `randomports`
-  Uses a random port number for swarm.
-
-- `test`
-  Reduces external interference of IPFS daemon. Useful when using the daemon in test environments.
-
-- `default-networking`
-  Restores default network settings. Inverse profile of the test profile.
-
-- `lowpower`
-  Reduces daemon overhead on the system. May degrade performance of content discovery and data fetching.
+* `server`   Disables local host discovery, recommended when running IPFS on machines with public IPv4 addresses.
+* `local-discovery`   Sets default values to fields affected by the server profile, enables discovery in local networks.
+* `randomports`   Uses a random port number for swarm.
+* `test`   Reduces external interference of IPFS daemon. Useful when using the daemon in test environments.
+* `default-networking`   Restores default network settings. Inverse profile of the test profile.
+* `lowpower`   Reduces daemon overhead on the system. May degrade performance of content discovery and data fetching.
 
 ## Reset your profile
 
@@ -136,11 +121,10 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 Download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to your environment path:
 
-- Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.tech/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
-- Add the full path to `ipfs-ds-convert.exe` to your environment variables path.
+* Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.tech/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
+* Add the full path to `ipfs-ds-convert.exe` to your environment variables path.
 
-To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.tech/#ipfs-ds-convert).
-Once you are done with the installation process, verify that `ipfs-ds-convert` has been installed successfully by executing the following command:
+To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.tech/#ipfs-ds-convert). Once you are done with the installation process, verify that `ipfs-ds-convert` has been installed successfully by executing the following command:
 
 ```bash
 ipfs-ds-convert --version

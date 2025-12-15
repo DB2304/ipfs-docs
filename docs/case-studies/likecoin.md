@@ -1,21 +1,19 @@
 ---
 title: 'Case study: LikeCoin'
-description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
+description: >-
+  Explore some helpful use cases, ideas, and examples for the InterPlanetary
+  File System (IPFS).
 ---
 
 # Case study: LikeCoin
 
-::: callout
-**"With LikeCoin, we're decentralizing the standard of truth for online media content. That means we're taking the power to moderate content out of the hands of big government and companies, and putting it into the hands of content creators."**
+::: callout **"With LikeCoin, we're decentralizing the standard of truth for online media content. That means we're taking the power to moderate content out of the hands of big government and companies, and putting it into the hands of content creators."**
 
-_&mdash; Kin Ko, Founder, LikeCoin_
-:::
+_— Kin Ko, Founder, LikeCoin_ :::
 
 ## Overview
 
-::: right
-<img src="./images/logo-likecoin.svg" alt="LikeCoin logo" width="240">
-:::
+::: right ![LikeCoin logo](../../.gitbook/assets/logo-likecoin.svg) :::
 
 [LikeCoin](https://like.co/) is an open-source framework for constructing a decentralized, censorship-resistant, blockchain-based publishing infrastructure for content creators and consumers alike. At its core, LikeCoin works as a repository for immutable digital content metadata. Its [Cosmos SDK](https://cosmos.network/sdk)-based blockchain records that data and guarantees its integrity using LikeCoin's digital registry protocol, the [International Standard Content Number](https://iscn.io) (ISCN). The ISCN functions like an International Standard Book Number (ISBN) for digital content; this unique, immutable content identifier contains metadata including author, title, language, publisher, and place/time of publication.
 
@@ -25,12 +23,6 @@ LikeCoin relies on IPFS for storing and serving ISCN-linked content within its L
 
 ### LikeCoin by the numbers
 
-<NumberBlock :items="[
-  {value: '&gt;300K', text:'pieces of content on LikeCoin'},
-  {value: '&gt;80K', text: 'Likers using the LikeCoin platform'},
-  {value: '&gt;11K', text: 'creators sharing content on LikeCoin'},
-]" />
-
 ## The story
 
 LikeCoin co-founder Kin Ko started as a game developer. But while he was working on creative video game content, he noticed that there was something amiss in the way creative content is rewarded online. Digital technologies, especially the web, have enabled an environment of unprecedented creativity and collaboration. But far too many creative contributions are difficult — if not impossible — to monetize on the web today. Many content creators are paid for their efforts in nothing but the reputation boosts from likes and shares.
@@ -39,11 +31,9 @@ Ko also recognized a threat to media and internet freedom due to the ability of 
 
 LikeCoin aims to fundamentally improve the way content is shared, moderated, and rewarded on the web. Using the Liker Land app, content creators and curators can share items within a decentralized, censorship-resistant publishing infrastructure. And once they've shared their work in Liker Land, their content has a trackable footprint — via the ISCN — that LikeCoin uses to distribute financial rewards to them directly. In the LikeCoin ecosystem, likes and shares don't just generate online reputation; they produce tangible value that can be stored or exchanged.
 
-::: callout
-**"To work best, the creative process needs to be free from corporate or government interference and capable of generating real economic value all on its own. We created LikeCoin to fulfill both functions at once."**
+::: callout **"To work best, the creative process needs to be free from corporate or government interference and capable of generating real economic value all on its own. We created LikeCoin to fulfill both functions at once."**
 
-_&mdash; Kin Ko, Founder, LikeCoin_
-:::
+_— Kin Ko, Founder, LikeCoin_ :::
 
 At the heart of the LikeCoin ecosystem is its decentralized metadata registry, written on [LikeCoin's own blockchain](https://github.com/likecoin/likecoin-chain). As the world's first data registry specifically recording the Internet's digital creative content, it stores ISCN metadata for every item published or shared within Liker Land or associated with the LikeCoin button.
 
@@ -51,11 +41,9 @@ But the LikeCoin team quickly realized that simply creating a system of record f
 
 Content shared within Liker Land is stored and delivered using IPFS's distributed peer-to-peer network, resulting both in enhanced censorship resistance and assurance that a piece of content is always available as long as at least one node in the network has a copy. And because the Liker Land app and extension use [IPLD](https://ipld.io/) to associate IPFS content identifiers with ISCN metadata, the workflow of publishing, sharing, reading, liking, and rewards is seamless — there's no need for a content creator or end user to understand what goes on behind the scenes, let alone the nuances of APIs or blockchains.
 
-::: callout
-**"We locked on to IPFS after a lot of research about the best way to distribute our data. Building on IPFS provides us with an exciting, innovative way to ensure availability of our data without compromising on our key values."**
+::: callout **"We locked on to IPFS after a lot of research about the best way to distribute our data. Building on IPFS provides us with an exciting, innovative way to ensure availability of our data without compromising on our key values."**
 
-_&mdash; Chung Wu, chief researcher, LikeCoin_
-:::
+_— Chung Wu, chief researcher, LikeCoin_ :::
 
 The end-user workflow is simple and intuitive: Content creators, curators, and consumers take part in the LikeCoin ecosystem by using the free [Liker Land](https://liker.land/getapp) app, a reader and wallet for engaging with content. LikeCoin also offers a browser extension for [Chromium](https://chrome.google.com/webstore/detail/liker-land/cjjcemdmkddjbofomfgjedpiifpgkjhe?hl=en) (Chrome and Brave), so users can add material to their Liker Land reading lists on the fly. Outside the Liker Land app, creators can collect likes directly from WordPress, Medium, and other common blogging platforms using an easy-to-implement LikeCoin button plugin.
 
@@ -65,19 +53,19 @@ As a "free republic" of content creators, curators and publishers, and consumers
 
 The LikeCoin team's core goals of providing a quantifiably rewardable space for creators and curators to share content without fear of corporate or governmental control are directly enabled by IPFS, specifically through these core benefits:
 
-- **Performant distributed storage:** IPFS provides a reliable, proven solution for distributed storage out of the box, backed by active core development and an engaged international [user and developer community](../community/README.md).
-- **Data integrity:** Thanks to its inherent use of [content addressing](../concepts/content-addressing.md), IPFS generates a unique content identifier (CID) for every artifact stored on IPFS — meaning that if an item is modified, its CID changes, too. Creators, curators, and users can share and view content in Liker Land with assurance that items haven't been modified by third parties.
-- **Censorship resistance:** API gateways to the LikeCoin blockchain itself can potentially be blocked by governments or other infrastructure players. By contrast, content stored and provided using IPFS can be accessed as long as a copy exists on an IPFS node somewhere on the network.
-- **IPLD as a blockchain intermediary:** Using the [IPLD plugin](https://github.com/ipfs/kubo/tree/master/plugin) included in `kubo`, any IPFS node can be used to access data stored on the LikeCoin blockchain. This makes it much harder for anyone to block access to LikeCoin-affiliated content. And because the plugin enables users to retrieve ISCN metadata through a CID — just like with any other piece of content on IPFS — the user experience of interacting with the LikeCoin blockchain is simplified even further.
+* **Performant distributed storage:** IPFS provides a reliable, proven solution for distributed storage out of the box, backed by active core development and an engaged international [user and developer community](../community/).
+* **Data integrity:** Thanks to its inherent use of [content addressing](../concepts/content-addressing.md), IPFS generates a unique content identifier (CID) for every artifact stored on IPFS — meaning that if an item is modified, its CID changes, too. Creators, curators, and users can share and view content in Liker Land with assurance that items haven't been modified by third parties.
+* **Censorship resistance:** API gateways to the LikeCoin blockchain itself can potentially be blocked by governments or other infrastructure players. By contrast, content stored and provided using IPFS can be accessed as long as a copy exists on an IPFS node somewhere on the network.
+* **IPLD as a blockchain intermediary:** Using the [IPLD plugin](https://github.com/ipfs/kubo/tree/master/plugin) included in `kubo`, any IPFS node can be used to access data stored on the LikeCoin blockchain. This makes it much harder for anyone to block access to LikeCoin-affiliated content. And because the plugin enables users to retrieve ISCN metadata through a CID — just like with any other piece of content on IPFS — the user experience of interacting with the LikeCoin blockchain is simplified even further.
 
 ## How LikeCoin uses IPFS
 
 The LikeCoin ecosystem is made up of four primary components:
 
-- The LikeCoin **ISCN blockchain** for source-of-truth content metadata
-- The **IPFS nodes** used to store and provide ISCN-associated content
-- The **Liker Land app and browser extensions**, through which users participate in the LikeCoin ecosystem
-- The **LikeCoin button** for third-party blogs and other publishing platforms, connecting likes on those platforms to the LikeCoin reward system
+* The LikeCoin **ISCN blockchain** for source-of-truth content metadata
+* The **IPFS nodes** used to store and provide ISCN-associated content
+* The **Liker Land app and browser extensions**, through which users participate in the LikeCoin ecosystem
+* The **LikeCoin button** for third-party blogs and other publishing platforms, connecting likes on those platforms to the LikeCoin reward system
 
 Critical to all of these is LikeCoin's use of IPFS and its integration with the ISCN blockchain. This takes place via the [IPLD plugin](https://github.com/ipfs/kubo/tree/master/plugin) included out of the box with [`kubo`](https://github.com/ipfs/kubo), enabling ISCN metadata for content items to associate with the items themselves stored on IPFS. This enables an integrated data structure in which LikeCoin's blockchain stores content metadata, while IPFS is used for querying and distributing it. This process takes place using a separate custom datastore plugin created by the LikeCoin team.
 
@@ -89,17 +77,15 @@ Just as IPFS is tightly integrated with the LikeCoin ISCN blockchain, chain node
 
 Because the LikeCoin blockchain itself is built in Go, the team was able to easily utilize `kubo` to achieve most of their required functionality out of the box. Just two additional custom plugins were needed in order to successfully integrate `kubo`:
 
-- [`ipfs-cosmosds`](https://github.com/likecoin/likecoin-ipfs-cosmosds) (noted above), which delegates ISCN metadata queries to the LikeCoin chain
-- [`iscn-ipld`](https://github.com/likecoin/iscn-ipld), which parses ISCN-related IPLD data in order to associate ISCN metadata with IPFS artifacts
+* [`ipfs-cosmosds`](https://github.com/likecoin/likecoin-ipfs-cosmosds) (noted above), which delegates ISCN metadata queries to the LikeCoin chain
+* [`iscn-ipld`](https://github.com/likecoin/iscn-ipld), which parses ISCN-related IPLD data in order to associate ISCN metadata with IPFS artifacts
 
 ## LikeCoin + IPFS: the future
 
 As the LikeCoin ecosystem continues to evolve, the team looks forward to incorporating current and future IPFS features, too. One particular future goal is to integrate [IPNS](../concepts/ipns.md), the InterPlanetary Name System, into LikeCoin's architecture. At present, in order to retrieve both a content item and all its associated ISCN metadata, LikeCoin code requires both an IPFS CID and the ISCN identifier itself. The team plans to use IPNS to link an ISCN with all corresponding IPFS CIDs in a single, updatable reference — something that would greatly streamline and simplify LikeCoin's data query and retrieval process.
 
-::: callout
-**"The future of LikeCoin is inextricably linked with the future of IPFS. We are actively experimenting with some of the most cutting-edge features of IPFS. Integrating these features into the LikeCoin ecosystem is crucial to our mission."**
+::: callout **"The future of LikeCoin is inextricably linked with the future of IPFS. We are actively experimenting with some of the most cutting-edge features of IPFS. Integrating these features into the LikeCoin ecosystem is crucial to our mission."**
 
-_&mdash; Phoebe Poon, VP of Business Development, LikeCoin_
-:::
+_— Phoebe Poon, VP of Business Development, LikeCoin_ :::
 
 _Note: Metrics and other details in this case study are current as of October 2020. Details may change in the interim._

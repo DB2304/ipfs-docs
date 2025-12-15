@@ -1,13 +1,15 @@
 ---
 title: Introducing Fleek
-description: Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or run command-line scripts.
+description: >-
+  Fleek is a service that lets you host a website on IPFS without needing to
+  install anything on your computer or run command-line scripts.
 ---
 
 # Introducing Fleek
 
 Most of the steps we've covered in this tutorial series have been fairly manual. Wouldn't it be nice if there were a service that did all the busy work for you, so you could focus on hosting great websites on IPFS? That's where Fleek comes in!
 
-![The Fleek homepage, showing a "Build on the New Internet" slogan at the top.](./images/introducing-fleek/fleek-homepage.png)
+![The Fleek homepage, showing a "Build on the New Internet" slogan at the top.](../../../.gitbook/assets/fleek-homepage.png)
 
 Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or deal with the command-line.
 
@@ -28,29 +30,28 @@ We're going to re-use the Random Planet Facts site we created in a previous tuto
 If you cloned the Random Planet Facts repo above, you don't need to follow this section.
 
 1. Log into [GitHub](https://github.com).
-1. Create a new repository and upload the Random Planet Facts project.
-1. Your project repository should look something like this:
+2. Create a new repository and upload the Random Planet Facts project.
+3.  Your project repository should look something like this:
 
-   ![A GitHub repository showing an index.html file, a style.css file, and an image file.](./images/introducing-fleek/github-repo-showing-a-few-files.png)
+    ![A GitHub repository showing an index.html file, a style.css file, and an image file.](../../../.gitbook/assets/github-repo-showing-a-few-files.png)
 
 ### Add a repository to Fleek
 
 1. Go to [Fleek.co](https://fleek.co/) and sign in using your GitHub account. You may need to allow Fleek to access your GitHub profile.
-1. Once logged in, click **Add new site**.
-1. Select **Connect with GitHub** and find the site that you want to host on IPFS.
-1. Leave all the options with their default settings. Since we're not dealing with a special framework or a repository with lots of branches we don't have to change anything here.
+2. Once logged in, click **Add new site**.
+3. Select **Connect with GitHub** and find the site that you want to host on IPFS.
+4.  Leave all the options with their default settings. Since we're not dealing with a special framework or a repository with lots of branches we don't have to change anything here.
 
-   ![Fleek showing the website repository options page.](./images/introducing-fleek/fleek-showing-the-website-repo-options.png)
+    ![Fleek showing the website repository options page.](../../../.gitbook/assets/fleek-showing-the-website-repo-options.png)
+5.  Click **Deploy site**. Fleek will add your site into the build queue. Once it's done you can click **Verify on IPFS** to view your site!
 
-1. Click **Deploy site**. Fleek will add your site into the build queue. Once it's done you can click **Verify on IPFS** to view your site!
-
-   ![Deployment information window within Fleek.](./images/introducing-fleek/deployment-information-window.png)
+    ![Deployment information window within Fleek.](../../../.gitbook/assets/deployment-information-window.png)
 
 ## Domain names
 
 Fleek allows you to configure your domain names with your sites on IPFS! No more wrangling with DNSlink or IPNS. You can even buy domains directly through Fleek. Click **Add or Buy Domain** to get started. [Check out the Fleek documentation for more information on how to get your domain linked up →](https://docs.fleek.co/domain-management/overview/)
 
-![A black button leading to the domain section of Fleek](./images/introducing-fleek/add-or-buy-domain.png)
+![A black button leading to the domain section of Fleek](../../../.gitbook/assets/add-or-buy-domain.png)
 
 ## Up next
 

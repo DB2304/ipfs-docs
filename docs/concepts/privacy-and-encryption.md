@@ -1,7 +1,9 @@
 ---
 title: Privacy and encryption
-description: Learn about user privacy in IPFS and why it does not come with a built-in privacy layer or encryption.
 sidebarDepth: 2
+description: >-
+  Learn about user privacy in IPFS and why it does not come with a built-in
+  privacy layer or encryption.
 ---
 
 # Privacy and encryption
@@ -14,13 +16,11 @@ So, why doesn't the IPFS protocol itself explicitly have a _privacy layer_ built
 
 If you're worried about the implications of this, it might be worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you.
 
-::: tip
-While IPFS traffic _between nodes_ is encrypted, the essential metadata that nodes publish to the DHT — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — is public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures.
-:::
+::: tip While IPFS traffic _between nodes_ is encrypted, the essential metadata that nodes publish to the DHT — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — is public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures. :::
 
 ## What's public on IPFS
 
-All traffic on IPFS is public, including the contents of files themselves, unless they're [encrypted](#encryption). For purposes of understanding IPFS privacy, this may be easiest to think about in two halves: content identifiers (CIDs) and IPFS nodes themselves.
+All traffic on IPFS is public, including the contents of files themselves, unless they're [encrypted](privacy-and-encryption.md#encryption). For purposes of understanding IPFS privacy, this may be easiest to think about in two halves: content identifiers (CIDs) and IPFS nodes themselves.
 
 ### Content identifiers
 
@@ -34,27 +34,26 @@ The other half of the equation when considering the prospect of IPFS traffic mon
 
 While a long string of letters and numbers may not be a "Johnny Appleseed" level of human-readable specificity, your PeerID is still a long-lived, unique identifier for your node. Keep in mind that it's possible to do a DHT lookup on your PeerID and, particularly if your node is regularly running from the same location (like your home), find your IP address. (It's possible to [reset your PeerID](../reference/kubo/cli.md#ipfs-key-rotate) if necessary, but similarly to changing your user ID on legacy web apps and services, is likely to involve extra effort.) Additionally, longer-term monitoring of the public IPFS network could yield information about what CIDs your node is requesting and/or reproviding and when.
 
-
 ### Encryption
 
 There are two types of encryption in a network: _transport-encryption_ and _content-encryption_.
 
 Transport-encryption is used when sending data between two parties. Albert encrypts a file and sends it to Laika, who then decrypts it once it has been received. This stops a third party from viewing the data while it is moving from one place to another.
 
-![A rough diagram showing how transport-encryption works.](./images/transport-encryption.png)
+![A rough diagram showing how transport-encryption works.](../../.gitbook/assets/transport-encryption.png)
 
 Content encryption is used to secure data until someone needs to access it. Albert creates a spreadsheet for his monthly budget and saves it with a password. When Albert needs to access it again, he must enter his password to decrypt the file. Without the password, Laika cannot view the file.
 
-![A rough diagram showing how content-encryption works.](./images/content-encryption.png)
+![A rough diagram showing how content-encryption works.](../../.gitbook/assets/content-encryption.png)
 
 IPFS uses transport-encryption but not content encryption. This means that your data is secure when being sent from one IPFS node to another. However, anyone can download and view that data if they have the CID. The lack of content encryption is an intentional decision. Instead of forcing you to use a particular encryption protocol, you are free to choose whichever method is best for your project. This modular design keeps IPFS lightweight and free of _vendor lock-in_.
 
 ### Encryption-based projects using IPFS
 
-- [Ceramic](https://ceramic.network/)
-- [Fission.codes](https://fission.codes/)
-- [Fleek](../case-studies/fleek.md)
-- [Lit Protocol](https://litprotocol.com/)
-- [OrbitDB](https://github.com/orbitdb)
-- [Peergos](https://peergos.org/)
-- [Textile](https://www.textile.io/)
+* [Ceramic](https://ceramic.network/)
+* [Fission.codes](https://fission.codes/)
+* [Fleek](../case-studies/fleek.md)
+* [Lit Protocol](https://litprotocol.com/)
+* [OrbitDB](https://github.com/orbitdb)
+* [Peergos](https://peergos.org/)
+* [Textile](https://www.textile.io/)

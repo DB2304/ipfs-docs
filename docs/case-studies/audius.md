@@ -1,38 +1,29 @@
 ---
 title: 'Case study: Audius'
-description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
+description: >-
+  Explore some helpful use cases, ideas, and examples for the InterPlanetary
+  File System (IPFS).
 ---
 
 # Case study: Audius
 
-::: callout
-**"IPFS and blockchains like Ethereum can be combined to form consensus around large blobs of data in a decentralized, immutable way. Combining the content addressability of IPFS, the immutability of a blockchain, and a network of nodes pinning content to IPFS like the Audius creator nodes, you get the tools necessary to build decentralized systems."**
+::: callout **"IPFS and blockchains like Ethereum can be combined to form consensus around large blobs of data in a decentralized, immutable way. Combining the content addressability of IPFS, the immutability of a blockchain, and a network of nodes pinning content to IPFS like the Audius creator nodes, you get the tools necessary to build decentralized systems."**
 
-_&mdash; Dheeraj Manjunath, Head of Engineering, Audius_
+_— Dheeraj Manjunath, Head of Engineering, Audius_
 
 **"I don’t know if Audius would exist without IPFS."**
 
-_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
-:::
+_— Hareesh Nagaraj, Senior Engineer, Audius_ :::
 
 ## Overview
 
-::: right
-<img src="./images/logo-audius.png" alt="Audius logo" width="100">
-:::
+::: right ![Audius logo](../../.gitbook/assets/logo-audius.png) :::
 
-**[Audius](https://audius.co/)** is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
+[**Audius**](https://audius.co/) is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
 
 In 2018, when Audius was looking into decentralized storage, they needed a system that would enable routing and addressing of large amounts of content in a decentralized way for their content streaming network. At the time, IPFS had the only system that fit their needs for decentralization, with no immediate lock-in or payment up front. Now, after two years on the network, Audius has found that IPFS has consistently performed and provided the flexibility and resilience needed for their network. "The lack of surprises is an advantage," says Hareesh Nagaraj, senior engineer at Audius. "It’s been reliable the whole time."
 
 ### Audius by the numbers
-
-<NumberBlock :items="[
-  {value: '5M', text:'content identifiers'},
-  {value: 3.5, text: 'terabytes of data'},
-  {value: '12', text: 'independent discovery and creator node providers'},
-  {value: '40K', text: 'registered users'}
-]" />
 
 ## The story
 
@@ -42,15 +33,13 @@ The Audius network and protocol are open-source frameworks that allow anyone to 
 
 Over the course of Audius' work with IPFS, issues that have come up were always resolved together with the Protocol Labs team, or by supplementing with other technologies. As a distributed platform, Audius uses a stack that has failovers for every layer, including the content servers, and working with IPFS has made integration with multiple solutions simple. "Part of being decentralized is having appropriate failovers for all layers. We try to use IPFS as heavily as we can, but in certain cases we do also have backups," says Manjunath.
 
-Nagaraj notes that the learning curve for building on IPFS was accessible: "In terms of development, it was very easy to grasp everything. We actually got that very quickly, which is definitely a value-add, and since then it’s only gotten easier," he says, citing development tools that have come online over the course of their experience with IPFS. As their usage of IPFS has grown, he adds, "we’re one of the bigger hot-read operators on IPFS" &mdash; explaining that the "hot read" requirements relate to the need for streaming services to get real-time or near-real-time reading operations. Unlike file download services, the listeners to the Audius network would notice if there were any gaps in the streaming of the music.
+Nagaraj notes that the learning curve for building on IPFS was accessible: "In terms of development, it was very easy to grasp everything. We actually got that very quickly, which is definitely a value-add, and since then it’s only gotten easier," he says, citing development tools that have come online over the course of their experience with IPFS. As their usage of IPFS has grown, he adds, "we’re one of the bigger hot-read operators on IPFS" — explaining that the "hot read" requirements relate to the need for streaming services to get real-time or near-real-time reading operations. Unlike file download services, the listeners to the Audius network would notice if there were any gaps in the streaming of the music.
 
-::: callout
-"IPFS and the Protocol Labs team have been great in terms of supporting us and giving us the resources we need. Choosing a dependency on such a novel tech isn’t necessarily the standard way of doing things, but I’m really glad we did. The extensibility that it gives us is huge. Overall, it’s been a game changer for us."
+::: callout "IPFS and the Protocol Labs team have been great in terms of supporting us and giving us the resources we need. Choosing a dependency on such a novel tech isn’t necessarily the standard way of doing things, but I’m really glad we did. The extensibility that it gives us is huge. Overall, it’s been a game changer for us."
 
-_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
-:::
+_— Hareesh Nagaraj, Senior Engineer, Audius_ :::
 
-Regarding Audius' use of the blockchain, the network uses two sets of smart contracts on Ethereum and POA Network to manage content. Audius' L1 layer is used for coordinating and forming consensus on IPFS blocks &mdash; e.g., who uploaded what and when. Pointers to the "what" &mdash; all content and metadata &mdash; go from the blockchain layer to IPFS, where the data lives off-chain and is addressed via IPFS. No content is ever uploaded to any blockchain.
+Regarding Audius' use of the blockchain, the network uses two sets of smart contracts on Ethereum and POA Network to manage content. Audius' L1 layer is used for coordinating and forming consensus on IPFS blocks — e.g., who uploaded what and when. Pointers to the "what" — all content and metadata — go from the blockchain layer to IPFS, where the data lives off-chain and is addressed via IPFS. No content is ever uploaded to any blockchain.
 
 Users control their own Ethereum private keys, which permission control of their content on-chain. Under this scheme, Audius doesn’t own the music of the content producers; Audius provides the means for streaming, and the interface, but they don’t have command over the content itself. The technology behind the control of one's own keys restores ownership to the artists while also allowing consumers of the streams to be in charge of their own personal data.
 
@@ -64,17 +53,17 @@ As a large user of the IPFS network, Audius has taken advantage of the [official
 
 In terms of concrete benefits, the Audius team cites the following as key wins of using IPFS:
 
-- Fully decentralized storage
-- Content-based addressing system
-- Tech stack fit with blockchain
-- Easy-to-understand implementation
-- Multiple implementations (JavaScript, Go, Python HTTP API)
-- Separation of hosting costs and tech stack use
-- Large, active, supportive community
-- Node flexibility and customizability
-- Support from IPFS core developers
-- Extensive documentation
-- Third-party extensions and support
+* Fully decentralized storage
+* Content-based addressing system
+* Tech stack fit with blockchain
+* Easy-to-understand implementation
+* Multiple implementations (JavaScript, Go, Python HTTP API)
+* Separation of hosting costs and tech stack use
+* Large, active, supportive community
+* Node flexibility and customizability
+* Support from IPFS core developers
+* Extensive documentation
+* Third-party extensions and support
 
 In particular, IPFS's strengths and capabilities in content addressing and easy-to-implement decentralized storage were game-changers for the Audius team.
 
@@ -100,14 +89,14 @@ All files and metadata on Audius are _shared_ using IPFS by creator node service
 
 Audius uses the following IPFS implementations with no modification:
 
-- **IPFS core**
-- [`kubo`](https://github.com/ipfs/kubo)
-  - _All individual nodes are `kubo` containers_
-- [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client)
-  - _Discovery provider is a Python application_
-  - _Python application uses a Flask server + Celery worker queue + PostgreSQL database_
-- [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)
-  - _Creator node is a Node.js-based service and heavily uses this client to interact with dedicated IPFS nodes_
+* **IPFS core**
+* [`kubo`](https://github.com/ipfs/kubo)
+  * _All individual nodes are `kubo` containers_
+* [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client)
+  * _Discovery provider is a Python application_
+  * _Python application uses a Flask server + Celery worker queue + PostgreSQL database_
+* [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)
+  * _Creator node is a Node.js-based service and heavily uses this client to interact with dedicated IPFS nodes_
 
 For streaming, the Audius team uses HTTP Live Streaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
 

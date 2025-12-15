@@ -8,59 +8,51 @@ By following these guidelines, you're helping to keep the IPFS docs consistent.
 
 ### Grammar and spelling
 
-- Address readers in the second person by using _you_ to address them. Stay away from words like _I_, _we_, _our_, or _one_.
+*   Address readers in the second person by using _you_ to address them. Stay away from words like _I_, _we_, _our_, or _one_.
 
-  > **You** can install the virtual machine.
+    > **You** can install the virtual machine.
+*   Follow each list of three or more items with a comma, also known as the [_Oxford_ Comma](https://en.wikipedia.org/wiki/Serial_comma).
 
-- Follow each list of three or more items with a comma, also known as the [_Oxford_ Comma](https://en.wikipedia.org/wiki/Serial_comma).
+    | Use                           | Don't Use                    |
+    | ----------------------------- | ---------------------------- |
+    | One, two, three, and four.    | One, two, three and four.    |
+    | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
+* Write clearly and concisely. Sentences should be shorter than 25 words. Any longer, and things tend to get a little _blurry_.
+*   Don’t use formal or complex words when easy or short ones work fine.
 
-  | Use                           | Don't Use                    |
-  | ----------------------------- | ---------------------------- |
-  | One, two, three, and four.    | One, two, three and four.    |
-  | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
+    | Use   | Don't Use     |
+    | ----- | ------------- |
+    | Get   | Acquire       |
+    | Help  | Assist        |
+    | About | Approximately |
+* Use consistent terminology when writing general documentation. Writing standard docs isn't creative writing. You don't need to describe the same thing differently every time you mention it. However, for conceptual or theoretical topics, feel free to write more creatively.
+* Use American English spelling.
+*   Try not to use acronyms. If you _absolutely_ have to use acronyms, spell the full phrase first and include the acronym in parentheses `()` the first time you use them in each document.
 
-- Write clearly and concisely. Sentences should be shorter than 25 words. Any longer, and things tend to get a little _blurry_.
-- Don’t use formal or complex words when easy or short ones work fine.
-
-  | Use   | Don't Use     |
-  | ----- | ------------- |
-  | Get   | Acquire        |
-  | Help  | Assist        |
-  | About | Approximately |
-
-- Use consistent terminology when writing general documentation. Writing standard docs isn't creative writing. You don't need to describe the same thing differently every time you mention it. However, for conceptual or theoretical topics, feel free to write more creatively.
-- Use American English spelling.
-- Try not to use acronyms. If you _absolutely_ have to use acronyms, spell the full phrase first and include the acronym in parentheses `()` the first time you use them in each document.
-
-  > Decentralized Application (Dapp), Decentralized Web (DWeb)
-
-- Avoid using specific version numbers whenever possible.
+    > Decentralized Application (Dapp), Decentralized Web (DWeb)
+* Avoid using specific version numbers whenever possible.
 
 ### Formatting
 
 Write everything using the [GitHub Flavored Markdown](https://github.github.com/gfm/) syntax. Here are a few guidelines that help to keep everything nice and tidy.
 
-- Write file names, folders, addresses, and variables between code tags.
+*   Write file names, folders, addresses, and variables between code tags.
 
-  > Copy `example.json` to `~/var/www/html`.
+    > Copy `example.json` to `~/var/www/html`.
+*   Things that the user must click on, or look out for, should be in **bold**.
 
-- Things that the user must click on, or look out for, should be in **bold**.
+    > Click **Log out** to end your session. Enter your file name in the **File Name** field.
+*   Multi-line code blocks should have the language supplied in line with the markdown. Doing this helps the syntax highlighter know which language classes to use. To select a particular language in markdown, add the language name to the end of the first code tag:
 
-  > Click **Log out** to end your session.
-  > Enter your file name in the **File Name** field.
+    ```javascript
+    const contribution_guidelines = ['hello', 'world']
+    console.log(contribution_guidelines[0])
+    ```
+*   Keep titles in sentence-case (only capitalize the first letter and any names):
 
-- Multi-line code blocks should have the language supplied in line with the markdown. Doing this helps the syntax highlighter know which language classes to use. To select a particular language in markdown, add the language name to the end of the first code tag:
-
-  ```javascript
-  const contribution_guidelines = ['hello', 'world']
-  console.log(contribution_guidelines[0])
-  ```
-
-- Keep titles in sentence-case (only capitalize the first letter and any names):
-
-  > Types of contribution
-  >
-  > Dealing with the James Harden effect
+    > Types of contribution
+    >
+    > Dealing with the James Harden effect
 
 ### Project-specific titles
 
@@ -97,11 +89,11 @@ Once an issue has been created, it can be discussed by the community and IPFS pr
 Follow these steps to learn how to file an issue with the IPFS project.
 
 1. Go to the [Issues](https://github.com/ipfs/ipfs-docs/issues/) tab in the [`ipfs/ipfs-docs`](https://github.com/ipfs/ipfs-docs) repository.
-1. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
-1. If the issue doesn't already exist, click **New issue**.
-1. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you and direct you to fill out the required information.
-1. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
-1. Once you have finished describing your issue, click **Submit new issue**.
+2. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
+3. If the issue doesn't already exist, click **New issue**.
+4. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you and direct you to fill out the required information.
+5. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
+6. Once you have finished describing your issue, click **Submit new issue**.
 
 Shortly after your issue is submitted, an internal project lead from the IPFS project evaluates your issue. Further questions or requests-for-comment may be asked within the issue.
 
@@ -125,10 +117,10 @@ The screenshots included in this guide were taken in Visual Studio Code (VSCode)
 
 It's important to know what kind of content you are creating. The questions below will help you decide where your new content should live. For example, you would want to avoid adding a page written for experienced users between the already existing **Install** and **Basics** sections.
 
-- What type of content am I creating?
-- Who is my intended audience?
-- Does this content require a new page, or can it be added to an existing page?
-- If a new page or section must be added, how will it fit into the existing structure and flow of the docs?
+* What type of content am I creating?
+* Who is my intended audience?
+* Does this content require a new page, or can it be added to an existing page?
+* If a new page or section must be added, how will it fit into the existing structure and flow of the docs?
 
 When you've answered the questions outlined above, and you know where the new content will live, continue with the steps below.
 
@@ -137,20 +129,19 @@ When you've answered the questions outlined above, and you know where the new co
 You can't make changes to the main repo directly. First, you need to:
 
 1. Fork the repo.
-1. Clone the forked repo to your local storage.
+2. Clone the forked repo to your local storage.
 
 Follow [this guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) to do the above steps.
 
 Once you have the repo forked and cloned, the next step is to create a branch to add your changes. Doing so will help keep your work organized and will help you avoid committing undesired changes to your main branch.
 
 1. In the CLI, ensure that you are in the `ipfs-docs` directory.
-1. Use the `git branch` command to create a new branch:
+2.  Use the `git branch` command to create a new branch:
 
     ```shell
     git branch <NEW-BRANCH-NAME>
     ```
-
-1. Move to that branch using the `git checkout` command:
+3.  Move to that branch using the `git checkout` command:
 
     ```shell
     git checkout <NEW-BRANCH-NAME>
@@ -165,17 +156,15 @@ Adding a single page to an existing section is as simple as adding one line to t
 When adding the new line, follow the same format and syntax as the other lines.
 
 1. Open `config.js` in your text editor of choice.
-1. Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
+2.  Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
 
-    ![Add a new page](./images/add-new-page.png)
-
-1. Add the new line to the desired section.
+    ![Add a new page](.gitbook/assets/add-new-page.png)
+3.  Add the new line to the desired section.
 
     ```javascript
     'title-of-section/title-of-new-page'
     ```
-
-1. With the page now added to `config.js`, you can move on to the [**commit your changes** section](#commit-your-changes).
+4. With the page now added to `config.js`, you can move on to the [**commit your changes** section](CONTRIBUTING.md#commit-your-changes).
 
 ### Adding a new section
 
@@ -184,13 +173,12 @@ Adding a new section to the sidebar of the docs is a little more in-depth. For t
 When adding a new section, be sure you have the opening and closing curly brackets (`{` `}`) in the correct column. The easiest way to do this is to follow the positioning and format of the other sections in the file.
 
 1. Open `config.js` in your text editor of choice.
-1. Find the spot where you wish to add a new section. Again, the spot is between the **Basics** and **Concepts** sections for this example.
+2.  Find the spot where you wish to add a new section. Again, the spot is between the **Basics** and **Concepts** sections for this example.
 
-    ![Basics and concepts sections](./images/basics-and-concepts-sections.png)
+    ![Basics and concepts sections](.gitbook/assets/basics-and-concepts-sections.png)
+3.  Once you have found the right spot, add the following lines, replacing any variables with your own content.
 
-1. Once you have found the right spot, add the following lines, replacing any variables with your own content.
-
-    ![Add a new section](./images/add-new-section.png)
+    ![Add a new section](.gitbook/assets/add-new-section.png)
 
 ### Commit your changes
 

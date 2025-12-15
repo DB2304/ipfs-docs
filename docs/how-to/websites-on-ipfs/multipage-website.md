@@ -5,7 +5,7 @@ description: Learn how to host a website with multiple pages and external assets
 
 # Multi-page website
 
-In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](../../how-to/websites-on-ipfs/single-page-website.md) before you start this one. It will give you a solid foundation to work off.
+In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](single-page-website.md) before you start this one. It will give you a solid foundation to work off.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ If you followed the previous tutorial, you would already have the IPFS Desktop a
 Before we dig into IPFS, let's first create the files we'll need for this mini-project.
 
 1. Create a folder called `multi-page-first-step`.
-1. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the [Random Planet Facts](http://randomplanetfacts.xyz) website from the previous tutorial, with an added link to an _About_ page:
+2. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the [Random Planet Facts](http://randomplanetfacts.xyz) website from the previous tutorial, with an added link to an _About_ page:
 
 ```html
 <!DOCTYPE html>
@@ -149,9 +149,9 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
 ```
 
 1. Add your name to the `Created by ___.` line. If everyone reading this tutorial just copies and pastes the same code, then everyone will get the _exact same_ CID! While there's nothing wrong with this, it's more fun to use a CID that is unique to your project.
-1. Finally, download this image and save it in the folder as `moon-logo.png`:
+2.  Finally, download this image and save it in the folder as `moon-logo.png`:
 
-   ![Icon of the moon with stars and circles in the background.](./images/multipage-website/moon-logo.png)
+    ![Icon of the moon with stars and circles in the background.](../../../.gitbook/assets/moon-logo.png)
 
 You should now have a folder that looks something like this:
 
@@ -167,34 +167,30 @@ You should now have a folder that looks something like this:
 Now that you've got the project ready, we can add things to IPFS using the IPFS Desktop application. Instead of adding the files individually, we can add the whole project folder, and the IPFS Desktop app will take care of the rest for us!
 
 1. Open the IPFS Desktop application and select **Add** > **Folder**.
-1. Select the `multi-page-website` folder. Once it's loaded, you should be able to see the folder within the application:
+2.  Select the `multi-page-website` folder. Once it's loaded, you should be able to see the folder within the application:
 
-   ![The IPFS Desktop application with the multi-page project folder showing.](./images/multipage-website/ipfs-desktop-with-multi-page-folder-showing.png)
+    ![The IPFS Desktop application with the multi-page project folder showing.](../../../.gitbook/assets/ipfs-desktop-with-multi-page-folder-showing.png)
+3. Click the triple dot menu to the right and select **Share link**.
+4.  Click **Copy** and paste the link in a browser. You should be able to see your website with the logo!
 
-1. Click the triple dot menu to the right and select **Share link**.
-1. Click **Copy** and paste the link in a browser. You should be able to see your website with the logo!
+    ![Random space facts open in a Firefox browser window.](../../../.gitbook/assets/website-open-in-firefox.png)
 
-   ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)
-
-   Try clicking the link to the about page. You should be able to browse between the pages with no problem.
+    Try clicking the link to the about page. You should be able to browse between the pages with no problem.
 
 ## Publish to IPNS
 
-:::tip This step is optional
-You don't have to complete this section. However, it offers some valuable insight into how IPNS and IPFS work together.
-:::
+:::tip This step is optional You don't have to complete this section. However, it offers some valuable insight into how IPNS and IPFS work together. :::
 
 Using CIDs to get content is great; it means that the user always gets the content that they want. But what if the user doesn't know _what_ they're looking for and just wants the _latest_ version of that content? This is where IPNS comes in handy.
 
 Instead of sharing the CID of your website, you publish the root CID of your website to IPNS and then share the _key_ you get from IPNS.
 
-1. Open a terminal window, and navigate to where your multi-page project is saved:
+1.  Open a terminal window, and navigate to where your multi-page project is saved:
 
     ```shell
     cd ~/Code/multi-page-first-step
     ```
-
-1. Double check that this project has been added to IPFS by running `ipfs add -r .`:
+2.  Double check that this project has been added to IPFS by running `ipfs add -r .`:
 
     ```shell
     ipfs add -r .
@@ -205,9 +201,8 @@ Instead of sharing the CID of your website, you publish the root CID of your web
     > added QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR multi-page-first-step
     > 12.65 KiB / 12.65 KiB [=====================================================] 100.00%
     ```
-
-1. Copy the last CID `QmchJPQN...` from the output of the `ipfs add` command.
-1. Publish your project to IPNS using `ipfs name publish /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
+3. Copy the last CID `QmchJPQN...` from the output of the `ipfs add` command.
+4.  Publish your project to IPNS using `ipfs name publish /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
 
     ```shell
     ipfs name publish /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
@@ -216,9 +211,8 @@ Instead of sharing the CID of your website, you publish the root CID of your web
     ```
 
     The `k51qzi...` is your IPFS installation's key! This is what you can use to point people to your content.
-
-1. You should now be able to view your project by going to `https://gateway.ipfs.io/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
-1. Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
+5. You should now be able to view your project by going to `https://gateway.ipfs.io/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
+6.  Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
 
     ```shell
     ipfs add -r .
@@ -238,5 +232,4 @@ This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS p
 
 ## Up next
 
-In the next tutorial, we'll look at [linking a domain name to your site!](../../how-to/websites-on-ipfs/link-a-domain.md)
-
+In the next tutorial, we'll look at [linking a domain name to your site!](link-a-domain.md)

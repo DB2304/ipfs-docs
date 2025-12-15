@@ -1,15 +1,15 @@
 ---
 title: 'Case study: Snapshot & IPFS'
-description: Explore how the leading decentralized gasless voting platform Snapshot uses IPFS as its main storage layer.
+description: >-
+  Explore how the leading decentralized gasless voting platform Snapshot uses
+  IPFS as its main storage layer.
 ---
 
 # Case study: Snapshot
 
-::: callout
-**"IPFS is the standard for storing data in a verifiable and fully transparent way, thereby allowing us to build openly auditable governance systems"**
+::: callout **"IPFS is the standard for storing data in a verifiable and fully transparent way, thereby allowing us to build openly auditable governance systems"**
 
-_&mdash; [Fabien](https://twitter.com/bonustrack87), Founder and CEO, Snapshot Labs_
-:::
+_—_ [_Fabien_](https://twitter.com/bonustrack87)_, Founder and CEO, Snapshot Labs_ :::
 
 ## Overview
 
@@ -17,16 +17,13 @@ In this case study, you'll learn how [Snapshot](https://snapshot.org/) works and
 
 ## What is Snapshot
 
-::: right
-<img src="./images/logo-snapshot.png" alt="Snapshot logo" width="200">
-:::
+::: right ![Snapshot logo](../../.gitbook/assets/logo-snapshot.png) :::
 
-Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
-Snapshot works with projects deployed to Ethereum and EVM compatible chains and allows the use of governance tokens as a means to distribute voting power and eligibility.
+Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer. Snapshot works with projects deployed to Ethereum and EVM compatible chains and allows the use of governance tokens as a means to distribute voting power and eligibility.
 
 Snapshot is unique in its use of IPFS to store proposals and user votes using a technique known as ‘off-chain’ voting, where the cryptographic signatures proving user votes are persisted to IPFS instead of being stored on the blockchain.
 
-This means that voting with Snapshot is practically free since voters don’t need to pay gas for transactions, i.e. *gasless voting*. In doing so, Snapshot lowers the barrier to entry for voting, increases governance participation, and allows projects and communities to scale their voter base.
+This means that voting with Snapshot is practically free since voters don’t need to pay gas for transactions, i.e. _gasless voting_. In doing so, Snapshot lowers the barrier to entry for voting, increases governance participation, and allows projects and communities to scale their voter base.
 
 Transparency, one of the core tenets of governance in the Web3 space, is achieved by having all proposals and votes persisted using _content addressing_ on IPFS, thereby allowing anyone to view, audit, and replicate a copy of the CIDs containing the cryptographic signature.
 
@@ -35,13 +32,6 @@ Web3 projects and Decentralized Autonomous Organizations (DAOs) are typically ch
 In essence, Snapshot allows projects and DAOs aiming for decentralization to poll their community over which direction a project should move in.
 
 ### Snapshot by the numbers
-
-<NumberBlock :items="[
-  {value: '7M ', text:'CIDs'},
-  {value: '5M', text: 'Votes cast'},
-  {value: '&gt;9K', text: 'Projects & DAOs on Snapshot'},
-  {value: '63K', text: 'Proposals created on Snapshot'}
-]" />
 
 ## The story
 
@@ -61,13 +51,13 @@ In Snapshot, all proposals and votes are associated with a **space,** where each
 
 The only requirement for using Snapshot is to have an ENS name. To create a space, you create an [ENS text record](https://docs.ens.domains/ens-improvement-proposals/ensip-5-text-records) with the key `snapshot` pointing to an IPFS CID containing the JSON configuration for the space. For example, GnosisDAO with the [gnosis.eth ENS name has the `snapshot`](https://app.ens.domains/name/gnosis.eth/details) text record set to [`ipfs://QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD`](https://ipfs.io/ipfs/QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD) which contains the JSON configuration for the space.
 
-![ENS configuration for Snapshot on IPFS](./images/img-snapshot-ens-config.png)
+![ENS configuration for Snapshot on IPFS](../../.gitbook/assets/img-snapshot-ens-config.png)
 
 Each space configuration in Snapshot allows you to configure various **strategies** to determine:
 
-- Who can participate in voting, e.g. token holders of an ERC-20 token or NFT tokens (ERC-721, and ERC-1155.)
-- The voter's voting power, e.g. one vote per token.
-- Who submit proposals to be voted on, e.g. token holders with a given minimum number of tokens.
+* Who can participate in voting, e.g. token holders of an ERC-20 token or NFT tokens (ERC-721, and ERC-1155.)
+* The voter's voting power, e.g. one vote per token.
+* Who submit proposals to be voted on, e.g. token holders with a given minimum number of tokens.
 
 For example, the ENS project requires holding the ENS token to vote on proposals and at least 10k ENS tokens to create proposals.
 
@@ -81,15 +71,15 @@ Importantly, each proposal includes a **Snapshot block number** pointing to an E
 
 To calculate the results of a vote, each proposal employs one of the following **voting systems**:
 
-- Single choice
-- Approval voting, where a voter can select multiple choices
-- [Quadratic voting](https://en.wikipedia.org/wiki/Quadratic_voting)
-- Weighted voting
-- [and others](https://docs.snapshot.org/proposals/voting-types)
+* Single choice
+* Approval voting, where a voter can select multiple choices
+* [Quadratic voting](https://en.wikipedia.org/wiki/Quadratic_voting)
+* Weighted voting
+* [and others](https://docs.snapshot.org/proposals/voting-types)
 
 These voting systems are used to calculate the results of a vote based on the voting power. For example, the [following proposal](https://snapshot.org/#/decrypt-media.eth/proposal/QmPDpQSZuokqGpzqtPbmLp1LTqDjbhd6vCeKaSmqEXM9KH)) in the [Decrypt Media](https://decrypt.co/) space, grants Decrypt NFT holders the right to choose a single topic for the content they will write next. Voting power for this proposal is relative to the number of Decrypt NFTs held by the voter at block number `12,811,388`.
 
-![Decrypt content proposal](./images/img-snapshot-decrypt-proposal.png)
+![Decrypt content proposal](../../.gitbook/assets/img-snapshot-decrypt-proposal.png)
 
 ## How Snapshot uses IPFS
 
@@ -99,13 +89,13 @@ Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqah
 
 To understand how Snapshot uses IPFS, it's useful to understand how the whole architecture was designed. Snapshot is a hybrid app combining design patterns common to Web2 and Web3 apps, and is based on the three-tier architecture:
 
-- **Presentation tier:** [The Snapshot UI](https://github.com/snapshot-labs/snapshot).
-- **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
-- **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
+* **Presentation tier:** [The Snapshot UI](https://github.com/snapshot-labs/snapshot).
+* **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
+* **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
 
 > **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. [Tables in the database schema](https://github.com/snapshot-labs/snapshot-hub/blob/master/src/graphql/schema.gql) have an `ipfs` field holding the IPFS CID.
 
-![Snapshot architecture](./images/img-snapshot-architecture.png)
+![Snapshot architecture](../../.gitbook/assets/img-snapshot-architecture.png)
 
 ### Uploading to IPFS pinning services with Pineapple
 
@@ -125,20 +115,18 @@ The combination of user-controlled keys (via non-custodial crypto wallets), cryp
 
 Moreover, IPFS has several properties that enable that mission:
 
-- Proof of data integrity via IPFS content addressing
-- Ability to store data, even in perpetuity, without having to rely on a single centralized cloud storage platform.
-- Interoperability with multiple storage providers and pinning services. Once the data has been uploaded to a single pinning service on IPFS, it can move around easily and be stored on multiple pinning services to ensure redundancy.
-- Transparency and availability of data give anyone the ability to also pin and audit that data.
-- A thriving ecosystem of pinning services and open-source tooling
+* Proof of data integrity via IPFS content addressing
+* Ability to store data, even in perpetuity, without having to rely on a single centralized cloud storage platform.
+* Interoperability with multiple storage providers and pinning services. Once the data has been uploaded to a single pinning service on IPFS, it can move around easily and be stored on multiple pinning services to ensure redundancy.
+* Transparency and availability of data give anyone the ability to also pin and audit that data.
+* A thriving ecosystem of pinning services and open-source tooling
 
 ## Snapshot & IPFS: the future
 
 As Snapshot continues to evolve, the team looks forward to decentralizing its tech stack so that anyone can run a node, reducing the dependency on the Snapshot Node.js servers. Thanks to IPFS's integral role in Snapshot, a significant part of their data layer is already decentralized.
 
-::: callout
-**"Anytime we need to store data in Snapshot, we use IPFS so that users get full transparency and the ability to also take an active part in replicating that data."**
+::: callout **"Anytime we need to store data in Snapshot, we use IPFS so that users get full transparency and the ability to also take an active part in replicating that data."**
 
-_&mdash; Fabien, Founder and CEO, Snapshot Labs_
-:::
+_— Fabien, Founder and CEO, Snapshot Labs_ :::
 
 _Note: Metrics and other details in this case study are current as of August 2022. Details may change in the interim._
